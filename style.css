@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sohan;
+}
+@font-face{
+    src: url("Foonts/Montserrat-VariableFont_wght.ttf");
+    font-family: sohan;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0d0d3f;
+    padding: 15px 0;
+}
+.nav-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+nav ul li a:hover{
+    background-color: #80779b;
+}
+nav .active{
+    background-color: #80779b;   
+}
+.icon-bar{
+    color: white;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+
+/* css responsive code start here */
+
+@media only screen and (max-width: 940px) {
+    #check:checked ~ ul{
+        left: 0%;
+    }
+    #check:checked ~ .icon-bar i::before{
+        content: "\f00d";
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 58px;
+        background-color: #06066ec5;
+        width: 100%;
+        height: 100vh;
+        left: -100%;
+        transition: all 0.5s ease;
+    }
+    nav ul li {
+        margin: 25px 0;
+    }
+    nav .active{
+        background: none;  
+    }
+    nav ul li a:hover{
+        color: red;
+        background: none;
+    }
+    .icon-bar{
+        display: block;
+    }
+    
+    
+}
+
+/* start header area css code start her */
+
+header{
+    background-image: url("image/s.jpg");
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* start main first section css code start here */
+
+section {
+    background-color: #021233;
+    padding-bottom: 200px;
+}
+.service1-title{
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+#section-container {
+    width: 1000px;
+    margin: auto;
+}
+#section-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+.single-section-card{
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 2px;
+    border: 2px solid green;
+    box-shadow: 5px 5px 10px gray;
+    transition: 0.5s;
+}
+.single-section-card:hover{
+    transform: scale(1.1);
+}
+.single-section-card p {
+    padding: 25px 0;
+    font-size: 12px;
+}
+.single-section-card i {
+    padding: 20px 0;
+    font-size: 30px;
+}
+.single-section-card button {
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+.single-section-card button:hover{
+    background-color: #021233;
+    color: white;
+}
+
+@media only screen and (max-width: 688px) {
+    #section-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 689px) and (max-width: 999px) {
+    #section-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        width: 100%;
+    }
+}
